@@ -1,0 +1,9 @@
+1.分片概念
+
+2.Elastic-Job配置分为3个层级，分别是Core,Type和Root.每个层级使用相似于装饰者模式的方式装配。
+
+Core对应JobCoreConfiguration.用于提供作业核心配置信息，如：作业名称、分片总数、CRON表达式
+
+Type对应JobTypeConfiguration.有3个子类分别对应SIMPLE,DATAFLOW和SCRIPT类型作业，提供3中作业需要的不同配置
+
+ROOT对应JobRootConfiguration.有2个子类分别对应Lite和Cloud部署类型，提供不同部署类型所需的配置

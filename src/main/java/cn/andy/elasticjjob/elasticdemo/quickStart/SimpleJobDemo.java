@@ -17,19 +17,30 @@ public class SimpleJobDemo implements SimpleJob {
 
     @Override
     public void execute(ShardingContext shardingContext) {
+
+      /*  System.out.println(String.format("------Thread ID: %s, 任務總片數: %s, " +
+                        "当前分片項: %s.当前參數: %s," +
+                        "当前任務名稱: %s.当前任務參數: %s"
+                ,
+                Thread.currentThread().getId(),
+                shardingContext.getShardingTotalCount(),
+                shardingContext.getShardingItem(),
+                shardingContext.getShardingParameter(),
+                shardingContext.getJobName(),
+                shardingContext.getJobParameter()));*/
         log.info(String.format("------Thread ID: %s, " +
                         "任务总片数: %s," +
-                        "当前分片项: %s," +
+                        "当前分片项: %s." +
                         "当前分片项参数: %s," +
-                        "当前任务名称: %s"  +
+                        "当前任务名称: %s."  +
                         "当前任务参数: %s",
                 Thread.currentThread().getId(),
                 shardingContext.getShardingTotalCount(),
-                shardingContext.getShardingItem()),
+                shardingContext.getShardingItem(),
                 shardingContext.getShardingParameter(),
                 shardingContext.getJobName(),
-                shardingContext.getJobParameter());
-        switch(shardingContext.getShardingItem()) {
+                shardingContext.getJobParameter()));
+       /* switch(shardingContext.getShardingItem()) {
             case 0:
                 // do something by sharding item 0
                 break;
@@ -41,6 +52,6 @@ public class SimpleJobDemo implements SimpleJob {
                 break;
             // case n: ...
 
-        }
+        }*/
     }
 }
